@@ -7,10 +7,6 @@ set(EXTENSION_NAME ${TARGET_NAME}_extension)
 project(${TARGET_NAME})
 include_directories(include)
 
-set(ENV{PIXELS_SRC} ${CMAKE_CURRENT_SOURCE_DIR})
-set(ENV{PIXELS_HOME} ${CMAKE_CURRENT_SOURCE_DIR})
-
-
 set(EXTENSION_SOURCES
         pixels_extension.cpp
         PixelsScanFunction.cpp
@@ -24,6 +20,8 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 add_subdirectory(pixels-common)
 add_subdirectory(pixels-core)
+ add_subdirectory(pixels-cli)
+add_subdirectory(third-party/googletest)
 add_subdirectory(tests)
 
 include_directories(pixels-common/include)
